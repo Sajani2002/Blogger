@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dear Diary</title>
+    
+    <!-- Bootstrap CSS (for the grid system) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts for the "Dear Diary" logo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Your custom stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="hero-section">
+        <div class="container">
+            <!-- Two-column layout -->
+            <div class="row align-items-center">
+                
+                <!-- Left Column: Text and Buttons -->
+                <div class="col-md-6 text-content">
+                    <div class="logo">Dear Diary</div>
+                    <h1>Start <strong>Blogging</strong><br>Now</h1>
+                    <div class="buttons-container">
+                        <button class="btn btn-register" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+                        <button class="btn btn-signin" data-bs-toggle="modal" data-bs-target="#loginModal">Sign in</button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Illustration -->
+                <div class="col-md-6 illustration-content">
+                    <img src="assets/hero-illustration.png" alt="People floating clouds" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+   
+
+    <!-- Bootstrap JS (Needed for modals to work) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Your Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
