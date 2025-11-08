@@ -22,15 +22,20 @@ public class SecurityConfig {
 
             // Define our authorization rules
             .authorizeHttpRequests(auth -> auth
-                // RULE #1: Allow anyone to access the homepage and its assets
-                .requestMatchers("/", "/index.html", "/style.css", "/script.js", "/assets/**").permitAll()
-                
-                // RULE #2: Allow anyone to access our future login/register API endpoints
-                .requestMatchers("/api/auth/**").permitAll() 
-                
-                // RULE #3: Any other request must be from a logged-in user
-                .anyRequest().authenticated() 
-            );
+    // RULE #1 & #2 COMBINED: Allow public access to all static assets and auth endpoints
+    .requestMatchers(
+        "/", 
+        "/index.html", 
+        "/assets/**", 
+        "/pages/**", 
+        "/scripts/**", 
+        "/styles/**",
+        "/api/auth/**"  // <-- Also added here
+    ).permitAll()
+    
+    // RULE #3: Any other request must be from a logged-in user
+    .anyRequest().authenticated()
+);
 
         return http.build();
     }

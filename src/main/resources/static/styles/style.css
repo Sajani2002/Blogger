@@ -1,0 +1,177 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+/* --- General & Background --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents scrollbars on the hero section */
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #333;
+    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #fde2e4 100%);
+    padding: 0 20px;
+}
+
+/* --- Typography --- */
+.logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.text-content h1 {
+    font-size: 4.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.text-content h1 strong {
+    font-weight: 700;
+}
+
+/* --- Buttons --- */
+.buttons-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-register {
+    background-color: #ffffff;
+    color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-signin {
+    background-color: transparent;
+    color: #555;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+
+/* --- Illustration --- */
+.illustration-content {
+    text-align: center;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767px) {
+    .hero-section {
+        height: auto;
+        padding: 50px 20px;
+        text-align: center;
+    }
+    .illustration-content {
+        display: none; /* Hide the illustration on small screens to save space */
+    }
+    .buttons-container {
+        justify-content: center;
+    }
+}
+
+/* --- REGISTRATION MODAL STYLES --- */
+
+/* Override Bootstrap's default modal transition */
+.modal.fade .modal-dialog {
+    transform: translateY(100%);
+    transition: transform 0.4s ease-out;
+}
+
+.modal.show .modal-dialog {
+    transform: translateY(0);
+}
+
+/* Remove default modal background and borders */
+.modal-content.registration-panel {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.registration-panel .image-panel {
+    flex: 1;
+    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #fde2e4 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.registration-panel .image-content {
+    text-align: center;
+}
+
+.registration-panel .form-panel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #fff;
+    position: relative; /* For positioning the close button */
+}
+
+.registration-panel .form-content {
+    width: 100%;
+    max-width: 400px;
+}
+
+.registration-panel .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.registration-panel .form-control {
+    border-radius: 25px;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid #ddd;
+    background-color: #f7f7f9;
+}
+
+.registration-panel .btn-register-submit {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 25px;
+    background-color: #58c7d8;
+    color: white;
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-close-custom {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+    border: 0;
+    border-radius: .25rem;
+    width: 1.5em;
+    height: 1.5em;
+    opacity: 0.5;
+}
+
+.btn-close-custom:hover {
+    opacity: 1;
+}
