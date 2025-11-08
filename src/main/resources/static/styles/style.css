@@ -90,66 +90,56 @@ body {
     }
 }
 
-/* --- REGISTRATION MODAL STYLES --- */
-
-/* Override Bootstrap's default modal transition */
-.modal.fade .modal-dialog {
-    transform: translateY(100%);
-    transition: transform 0.4s ease-out;
-}
-
-.modal.show .modal-dialog {
-    transform: translateY(0);
-}
-
-/* Remove default modal background and borders */
-.modal-content.registration-panel {
-    background-color: transparent;
-    border: none;
-    display: flex;
-    flex-direction: row;
-}
-
-.registration-panel .image-panel {
-    flex: 1;
-    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #fde2e4 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-}
-
-.registration-panel .image-content {
+.login-link {
     text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
 }
 
-.registration-panel .form-panel {
-    flex: 1;
+
+/* --- REGISTRATION OFFCANVAS STYLES --- */
+
+/* Make the offcanvas panel take up 50% of the viewport width */
+#registerOffcanvas {
+    width: 50vw; /* 50% of viewport width */
+    background-color: #fff; /* A solid white background */
+    border-left: 1px solid #dee2e6;
+}
+
+/* On smaller screens, make it take up the full width */
+@media (max-width: 768px) {
+    #registerOffcanvas {
+        width: 100vw;
+    }
+}
+
+/* Styling for the form panel inside the offcanvas */
+.offcanvas .form-panel {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
     padding: 2rem;
-    background-color: #fff;
     position: relative; /* For positioning the close button */
 }
 
-.registration-panel .form-content {
+.offcanvas .form-content {
     width: 100%;
     max-width: 400px;
 }
 
-.registration-panel .form-group {
+.offcanvas .form-group {
     margin-bottom: 1.5rem;
 }
 
-.registration-panel .form-control {
+.offcanvas .form-control {
     border-radius: 25px;
     padding: 0.75rem 1.25rem;
     border: 1px solid #ddd;
     background-color: #f7f7f9;
 }
 
-.registration-panel .btn-register-submit {
+.offcanvas .btn-register-submit {
     width: 100%;
     padding: 0.75rem;
     border-radius: 25px;
@@ -160,7 +150,7 @@ body {
     transition: background-color 0.3s;
 }
 
-.btn-close-custom {
+.offcanvas .btn-close-custom {
     position: absolute;
     top: 2rem;
     right: 2rem;
@@ -170,8 +160,9 @@ body {
     width: 1.5em;
     height: 1.5em;
     opacity: 0.5;
+    z-index: 10;
 }
 
-.btn-close-custom:hover {
+.offcanvas .btn-close-custom:hover {
     opacity: 1;
 }
